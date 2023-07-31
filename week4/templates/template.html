@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Income Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h2>Income Prediction</h2>
+        </div>
+    </header>
+
+    <div class="ml-container">
+        <form action="{{ url_for('predict')}}" method="POST">
+            <p>Age:</p>
+            <input type="number" name="Age" required>
+
+            <p>Spending Score (1-100):</p>
+            <input type="number" name="Spending Score (1-100)" required>
+
+            <p>Work Experience:</p>
+            <input type="number" name="Work Experience" required>
+
+            <p>Family Size:</p>
+            <input type="number" name="Family Size" required>
+
+            <p>Gender:</p>
+            <select name="Gender" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+
+            <p>Profession:</p>
+            <input type="text" name="Profession" required>
+
+            <br/><br/>
+            <input type="submit" class="btn-info" value="Predict">
+        </form>
+    </div>
+</body>
+</html>
